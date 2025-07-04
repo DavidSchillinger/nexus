@@ -1,0 +1,22 @@
+{
+  "name": "@nexus/eslint-config",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint",
+    "preflight": "pnpm lint"
+  },
+  "dependencies": {
+    "@eslint/js": "^9",
+    "@stylistic/eslint-plugin": "^5"
+  },
+  "peerDependencies": {
+    "eslint": "^9",
+    "typescript-eslint": "^8"
+  }
+}

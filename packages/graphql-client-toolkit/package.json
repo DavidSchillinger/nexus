@@ -1,0 +1,46 @@
+{
+  "name": "@nexus/graphql-client-toolkit",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./codegen": "./dist/codegen.js",
+    "./codegen.js": "./dist/codegen.js",
+    "./graphql.config.base": "./dist/graphql.config.base.js",
+    "./graphql.config.base.js": "./dist/graphql.config.base.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "preflight": "pnpm build && pnpm lint && pnpm typecheck",
+    "codegen": "graphql-codegen -c ./node_modules/@nexus/graphql-client-codegen/dist/index.js"
+  },
+  "dependencies": {
+    "@nexus/graphql-client": "workspace:*",
+    "@nexus/graphql-client-codegen": "workspace:*"
+  },
+  "devDependencies": {
+    "@nexus/eslint-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "@apollo/client": "^3",
+    "@graphql-codegen/cli": "^5",
+    "graphql": "^16",
+    "msw": "^2",
+    "zod": "^3"
+  },
+  "peerDependenciesMeta": {
+    "msw": {
+      "optional": true
+    },
+    "zod": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@nexus/root",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r --parallel --stream=false test",
+    "lint": "pnpm -r --parallel --stream=false lint",
+    "typecheck": "pnpm -r --parallel --stream=false typecheck",
+    "preflight": "pnpm -r --parallel --stream=false preflight"
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "typescript": "^5",
+    "typescript-eslint": "^8"
+  }
+}

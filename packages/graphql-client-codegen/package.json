@@ -1,0 +1,45 @@
+{
+  "name": "@nexus/graphql-client-codegen",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "preflight": "pnpm build && pnpm lint && pnpm typecheck",
+    "codegen": "graphql-codegen -c ./dist/index.js"
+  },
+  "dependencies": {
+    "@graphql-codegen/add": "^5",
+    "@graphql-codegen/client-preset": "^4",
+    "@graphql-codegen/fragment-matcher": "^5",
+    "@graphql-codegen/schema-ast": "^4",
+    "@graphql-codegen/typescript-msw": "^3",
+    "graphql-codegen-typescript-validation-schema": "~0.17"
+  },
+  "devDependencies": {
+    "@graphql-typed-document-node/core": "^3",
+    "@nexus/eslint-config": "workspace:*",
+    "@parcel/watcher": "^2",
+    "@types/node": "^22"
+  },
+  "peerDependencies": {
+    "@graphql-codegen/cli": "^5",
+    "graphql": "^16",
+    "msw": "^2",
+    "zod": "^3"
+  },
+  "peerDependenciesMeta": {
+    "msw": {
+      "optional": true
+    },
+    "zod": {
+      "optional": true
+    }
+  }
+}

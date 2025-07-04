@@ -1,0 +1,27 @@
+{
+  "name": "@nexus/graphql-client",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "preflight": "pnpm build && pnpm lint && pnpm typecheck"
+  },
+  "dependencies": {
+    "graphql-ws": "^6"
+  },
+  "devDependencies": {
+    "@nexus/eslint-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "@apollo/client": "^3",
+    "graphql": "^16"
+  }
+}
